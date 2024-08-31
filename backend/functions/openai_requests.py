@@ -1,4 +1,5 @@
 import json
+import os
 
 import openai
 import requests
@@ -6,8 +7,8 @@ from decouple import config
 from functions.database import get_recent_messages
 
 # Retrieve Enviornment Variables
-openai.organization = config("OPEN_AI_ORG")
-openai.api_key = config("OPEN_AI_KEY")
+openai.organization = config("OPEN_AI_ORG", default=os.getenv("OPEN_AI_ORG"))
+openai.api_key = config("OPEN_AI_KEY", default=os.getenv("OPEN_AI_KEY"))
 
 # Convert audio to text
 def convert_audio_to_text(audio_file):
