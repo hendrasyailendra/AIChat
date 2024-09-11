@@ -121,3 +121,6 @@ Dockerfile
 *.tar.gz
 *.bak
 *.swp
+
+stored_data.json
+.env
