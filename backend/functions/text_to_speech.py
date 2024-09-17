@@ -3,7 +3,7 @@ import os
 import requests
 from decouple import config
 
-ELEVEN_LABS_API_KEY = config("ELEVEN_LABS_API_KEY", default=os.getenv("ELEVEN_LABS_API_KEY"))
+ELEVEN_LABS_API_KEY = config("ELEVEN_LABS_API_KEY", default=os.environ("ELEVEN_LABS_API_KEY"))
 
 def convert_text_to_speech(message):
     body = {

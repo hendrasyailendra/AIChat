@@ -8,8 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
 # Get Environment Vars
-openai.organization = config("OPEN_AI_ORG", default=os.getenv("OPEN_AI_ORG"))
-openai.api_key = config("OPEN_AI_KEY", default=os.getenv("OPEN_AI_KEY"))
+openai.organization = config("OPEN_AI_ORG", default=os.environ("OPEN_AI_ORG"))
+openai.api_key = config("OPEN_AI_KEY", default=os.environ("OPEN_AI_KEY"))
 
 # Custom function imports
 from functions.database import reset_message, store_messages
