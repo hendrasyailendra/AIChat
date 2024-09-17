@@ -9,8 +9,8 @@ from fastapi.responses import StreamingResponse
 from mangum import Mangum
 
 # Get Environment Vars
-openai.organization = config("OPEN_AI_ORG", default=os.environ("OPEN_AI_ORG"))
-openai.api_key = config("OPEN_AI_KEY", default=os.environ("OPEN_AI_KEY"))
+openai.organization = config("OPEN_AI_ORG", default=os.environ.get("OPEN_AI_ORG"))
+openai.api_key = config("OPEN_AI_KEY", default=os.environ.get("OPEN_AI_KEY"))
 
 # Custom function imports
 from functions.database import reset_message, store_messages
