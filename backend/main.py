@@ -6,6 +6,7 @@ from decouple import config
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
+from mangum import Mangum
 
 # Get Environment Vars
 openai.organization = config("OPEN_AI_ORG", default=os.environ("OPEN_AI_ORG"))
@@ -17,6 +18,7 @@ from functions.openai_requests import convert_audio_to_text, get_chat_response
 from functions.text_to_speech import convert_text_to_speech
 
 app = FastAPI()
+handler = Mangum(app)
 
 origins = [
     "http://localhost:5173",
