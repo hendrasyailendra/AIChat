@@ -13,7 +13,7 @@ def get_recent_messages():
 
     x = random.uniform(0,1)
     if x < 0.5 :
-        learn_instruction["content"] = learn_instruction["content"] + " Your response will include some dad jokes"
+        learn_instruction["content"] = learn_instruction["content"] + " Your response will include some jokes"
     else :
         learn_instruction["content"] = learn_instruction["content"] + " Your response will include a critical question"
 
